@@ -6,7 +6,7 @@ namespace util
 {
 
 
-using milliseconds long long int;
+using milliseconds = long long int;
 
 
 float get_elapsed_time();

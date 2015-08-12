@@ -11,7 +11,7 @@
 
 namespace
 {
-  milliseconds
+  util::milliseconds
   get_time()
   {
   #ifdef WIN32
@@ -25,16 +25,16 @@ namespace
   #endif
   }
 
-  milliseconds time_at_start_up = get_time();
+  const util::milliseconds time_at_start_up = get_time();
 }
 
 
-namespace utils {
+namespace util {
 
 
 float
 get_lapsed_time() {
-  return (GetTime() - timeAtStartup) / 1000.0f;
+  return (get_time() - time_at_start_up) / 1000.0f;
 }
 
 
