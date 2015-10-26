@@ -28,7 +28,7 @@ inline color        color_init(const float c1, const float c2, const float c3, c
 inline color        color_init(const std::array<float, 4> &channels);
 inline color        color_init(const std::array<uint8_t, 4> &channels);
 inline color        color_init(const float channels[], const uint32_t size);
-inline color        color_init(const uint8_t channels[] const uint32_t size);
+inline color        color_init(const uint8_t channels[], const uint32_t size);
 
 inline uint8_t      color_get_channel_1i(const color get_color_channel);
 inline uint8_t      color_get_channel_2i(const color get_color_channel);
@@ -70,7 +70,8 @@ namespace detail
 color
 color_init(const uint32_t hex_components)
 {
-  color = hex_components;
+  color c = hex_components;
+  return c;
 }
 
 
@@ -85,7 +86,7 @@ color_init(const uint8_t c1, const uint8_t c2, const uint8_t c3, const uint8_t c
 color
 color_init(const float c1, const float c2, const float c3, const float c4)
 {
-  return color_init(to_uint8(c1), to_uint8(c2), to_uint8(c3), to_uint8(c4));
+  return color_init(detail::to_uint8(c1), detail::to_uint8(c2), detail::to_uint8(c3), detail::to_uint8(c4));
 }
 
 
@@ -111,7 +112,7 @@ color_init(const float channels[], const uint32_t size)
 
 
 color
-color_init(const uint8_t channels[] const uint32_t size)
+color_init(const uint8_t channels[], const uint32_t size)
 {
   return color_init(channels[0], channels[1], channels[2], channels[4]);
 }
@@ -148,28 +149,28 @@ color_get_channel_4i(const color get_color_channel)
 float
 color_get_channel_1f(const color get_color_channel)
 {
-  return to_float(color_get_channel_1i(get_color_channel));
+  return detail::to_float(color_get_channel_1i(get_color_channel));
 }
 
 
 float
 color_get_channel_2f(const color get_color_channel)
 {
-  return to_float(color_get_channel_2i(get_color_channel));
+  return detail::to_float(color_get_channel_2i(get_color_channel));
 }
 
 
 float
 color_get_channel_3f(const color get_color_channel)
 {
-  return to_float(color_get_channel_3i(get_color_channel));
+  return detail::to_float(color_get_channel_3i(get_color_channel));
 }
 
 
 float
 color_get_channel_4f(const color get_color_channel)
 {
-  return to_float(color_get_channel_4i(get_color_channel));
+  return detail::to_float(color_get_channel_4i(get_color_channel));
 }
 
 

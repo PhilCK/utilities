@@ -8,7 +8,7 @@
 namespace util {
 
 
-std::string
+inline std::string
 get_contents_from_file(const std::string &filename)
 {
   // Open the file in binary mode
