@@ -34,6 +34,12 @@ public:
 
 
   template<typename T>
+  const T& get() const
+  {
+    return *reinterpret_cast<const T*>(&m_data);
+  }
+
+  template<typename T>
   T& get()
   {
     return *reinterpret_cast<T*>(&m_data);
