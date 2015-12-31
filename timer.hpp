@@ -23,7 +23,6 @@ public:
   
 private:
 
-  milliseconds  m_counter = 0;
   milliseconds  m_start   = 0;
   milliseconds  m_end     = 0;
   milliseconds  m_split   = 0;
