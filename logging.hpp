@@ -4,6 +4,13 @@
 
 #include <string>
 #include <stdint.h>
+#include <iostream>
+
+
+#define LOG_INFO(msg) std::cout << "[info] - " << msg << std::endl;
+#define LOG_WARNING(msg) std::cout << "[warning] - " << msg << std::endl;
+#define LOG_ERROR(msg) std::cout << "[error] - " << msg << std::endl;
+#define LOG_FATAL(msg) std::cout << "[fatal] - " << msg << std::endl;
 
 
 namespace util {

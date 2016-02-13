@@ -19,7 +19,6 @@ class variant
 {
 public:
 
-
   explicit variant()
   {
 
