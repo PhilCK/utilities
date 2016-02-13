@@ -1,6 +1,8 @@
 #include "obj_model_loader.hpp"
 #include <fstream>
 #include <sstream>
+#include <iterator>
+#include <algorithm>
 
 
 namespace util {
