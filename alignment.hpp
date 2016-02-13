@@ -5,9 +5,9 @@
 // Align memory
 
 #ifndef _MSC_VER
-#define ALIGN_16(to_align) to_align __attribute__ ((aligned (16)));
+#define ALIGN_16(to_align) to_align __attribute__ ((aligned (16)))
 #else
-#define ALIGN_16(to_align) __declspec(align(16)) to_align;
+#define ALIGN_16(to_align) __declspec(align(16)) to_align
 #endif
 
 
@@ -17,7 +17,7 @@
 #ifndef _MSC_VER
 #define PACK(structure) structure __attribute__((__packed__))
 #else
-#define PACK(structure) __pragma( pack(push, 1) ) structure __pragma( pack(pop) )
+#define PACK(structure) __pragma(pack(push, 1)) structure __pragma(pack(pop))
 #endif
 
 
