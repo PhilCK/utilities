@@ -43,6 +43,7 @@ timer::start()
 {
   m_start = get_time();
   m_split = m_start;
+  m_end   = 0;
 }
 
 
