@@ -41,11 +41,27 @@ get_contents_from_file(const std::string &filename)
 }
 
 
+// Strip out the filename in a path.
+inline std::string
+get_dir_from_filename(const std::string &filepath)
+{
+  auto loc = filepath.find_last_of("/");
+  
+  if(loc != std::string::npos)
+  {
+    return filepath.substr(0, loc + 1);
+  }
+  
+  return ""; // Found no seperator
+}
+
+
 /*
   This will search a string for and #include "file" declerations
   and then search for those files from the given directories to search.
   If found it will insert the contents into the string. If it cannout be found
   it will be replaced with an empty string.
+  It will not deal with subincludes.
 */
 inline std::string
 hash_include_string(const std::string &string_to_search, const std::vector<std::string> &dirs_to_search)
